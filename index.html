@@ -1,238 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Be My Valentine 💖</title>
+    <meta charset="UTF-8">
+    <title>Be My Love 💖</title>
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Comic Sans MS', 'Poppins', cursive;
+            overflow: hidden;
+        }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Comic Sans MS', 'Poppins', cursive;
-    overflow: hidden;
-    padding: 20px;
-}
+        /* Card */
+        .card {
+            background: white;
+            padding: 50px 60px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            position: relative;
+            min-width: 440px;
+        }
 
-/* Card */
-.card {
-    background: white;
-    padding: 30px 25px;
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    position: relative;
-    width: 100%;
-    max-width: 360px;
-}
+        h1 {
+            color: #ff4d6d;
+            font-size: 2.4rem;
+        }
 
-h1 {
-    color: #ff4d6d;
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-}
+        .tease {
+            color: #ff7a90;
+            font-size: 1.2rem;
+            min-height: 30px;
+            margin-bottom: 25px;
+        }
 
-.tease {
-    color: #ff7a90;
-    font-size: 1rem;
-    min-height: 24px;
-    margin-bottom: 22px;
-}
+        .buttons {
+            position: relative;
+            height: 90px;
+        }
 
-/* Buttons */
-.buttons {
-    position: relative;
-    height: 90px;
-}
+        button {
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
 
-button {
-    padding: 14px 26px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-}
+        /* YES */
+        #yesBtn {
+            background: #ff4d6d;
+            color: white;
+        }
 
-/* YES */
-#yesBtn {
-    background: #ff4d6d;
-    color: white;
-    width: 140px;
-}
+        #yesBtn:hover {
+            transform: scale(1.1);
+        }
 
-/* NO */
-#noBtn {
-    background: #e0e0e0;
-    color: #333;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
+        /* NO */
+        #noBtn {
+            background: #e0e0e0;
+            color: #333;
+            position: absolute;
+            left: 240px;
+            top: 0;
+        }
 
-/* Celebration */
-.celebration {
-    display: none;
-    background: white;
-    padding: 30px 25px;
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    width: 100%;
-    max-width: 360px;
-}
+        /* Celebration */
+        .celebration {
+            display: none;
+            background: white;
+            padding: 45px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
 
-.ring {
-    font-size: 80px;
-    animation: pop 1s ease;
-}
+        /* Ring */
+        .ring {
+            font-size: 90px;
+            animation: pop 1s ease;
+        }
 
-@keyframes pop {
-    0% { transform: scale(0); }
-    70% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+            }
 
-/* Photos */
-.photos {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 18px 0;
-}
+            70% {
+                transform: scale(1.2);
+            }
 
-.photos img {
-    width: 100px;
-    height: 100px;
-    border-radius: 15px;
-    object-fit: cover;
-}
+            100% {
+                transform: scale(1);
+            }
+        }
 
-/* WhatsApp */
-.whatsapp {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    padding: 14px 22px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 12px;
-}
+        /* Photos */
+        .photos {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
 
-/* Floating effects */
-.float {
-    position: absolute;
-    font-size: 24px;
-    animation: floatUp 3s linear infinite;
-    pointer-events: none;
-}
+        .photos img {
+            width: 110px;
+            height: 110px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
 
-@keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-600px); opacity: 0; }
-}
-</style>
+        /* WhatsApp */
+        .whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* Floating stuff */
+        .float {
+            position: absolute;
+            font-size: 24px;
+            animation: floatUp 3s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-600px);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Romantic Music -->
-<audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_22c8e3b0d0.mp3" type="audio/mpeg">
-</audio>
+    <!-- Romantic music -->
+    <audio autoplay loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_22c8e3b0d0.mp3" type="audio/mpeg">
+    </audio>
 
-<div class="card" id="mainCard">
-    <h1>Will you be my Valentine? 💘</h1>
-    <div class="tease" id="teaseText">Think carefully 😏</div>
+    <div class="card" id="mainCard">
+        <h1>Will you be my Love? 💘</h1>
+        <div class="tease" id="teaseText">Think carefully 😏</div>
 
-    <div class="buttons">
-        <button id="yesBtn">Yes 💖</button>
-        <button id="noBtn">No 💔</button>
-    </div>
-</div>
-
-<div class="celebration" id="celebrationCard">
-    <div class="ring">💍</div>
-    <h2>IT’S A DATE!!! 💕</h2>
-
-    <div class="photos">
-        <!-- Replace with real photos -->
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
+        <div class="buttons">
+            <button id="yesBtn">Yes 💖</button>
+            <button id="noBtn">No 💔</button>
+        </div>
     </div>
 
-    <p>You just made my heart explode 💖</p>
+    <div class="celebration" id="celebrationCard">
+        <div class="ring">💍</div>
+        <h2>HAPPY BIRTHDAY BABY LOVE !!! 💕🎉</h2>
 
-    <a class="whatsapp"
-       href="https://wa.me/?text=I%20just%20said%20YES%20to%20being%20your%20Valentine%20💖💍🎉"
-       target="_blank">
-        💌 Share on WhatsApp
-    </a>
-</div>
+        <div class="photos">
+            <!-- Replace these images with your own -->
+            <img src="c:\Users\rishi\Downloads\WhatsApp Image 2026-02-08 at 12.25.27 PM.jpeg" />
+            <img src="c:\Users\rishi\Downloads\WhatsApp Image 2026-02-08 at 12.25.55 PM.jpeg" />
+        </div>
 
-<script>
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const teaseText = document.getElementById("teaseText");
-const mainCard = document.getElementById("mainCard");
-const celebrationCard = document.getElementById("celebrationCard");
+        <p>You just made my heart explode 💖</p>
 
-let scale = 1;
-let teaseIndex = 0;
+        <a class="whatsapp" href="https://wa.me/?text=I%20just%20said%20YES%20to%20being%20your%20Love%20💖💍🎉"
+            target="_blank">
+            💌 Share on WhatsApp
+        </a>
+    </div>
 
-const teaseMessages = [
-    "Are you sure? 😏",
-    "Really? 🤨",
-    "Think again 💭",
-    "Last chance 👀",
-    "You can’t escape love 💘"
-];
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const yesBtn = document.getElementById("yesBtn");
+        const teaseText = document.getElementById("teaseText");
+        const mainCard = document.getElementById("mainCard");
+        const celebrationCard = document.getElementById("celebrationCard");
 
-function moveNo() {
-    const x = Math.random() * 160;
-    const y = Math.random() * 40;
+        let scale = 1;
+        let teaseIndex = 0;
 
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+        const teaseMessages = [
+            "Are you sure? 😏",
+            "Really? 🤨",
+            "Last chance 👀",
+            "You can’t escape love 💘",
+            "Okay now stop 😭"
+        ];
 
-    scale -= 0.08;
-    if (scale < 0.45) scale = 0.45;
-    noBtn.style.transform = `scale(${scale})`;
+        function chaosNo()
+        {
+            noBtn.style.left = Math.random() * 300 + "px";
+            noBtn.style.top = Math.random() * 40 + "px";
+            scale -= 0.1;
+            if (scale < 0.4) scale = 0.4;
+            noBtn.style.transform = `scale(${scale})`;
 
-    teaseText.textContent = teaseMessages[teaseIndex++ % teaseMessages.length];
-}
+            teaseText.textContent = teaseMessages[teaseIndex++ % teaseMessages.length];
+        }
 
-noBtn.addEventListener("touchstart", moveNo);
-noBtn.addEventListener("click", moveNo);
+        noBtn.addEventListener("mouseover", chaosNo);
+        noBtn.addEventListener("mousedown", chaosNo);
 
-yesBtn.addEventListener("click", () => {
-    mainCard.style.display = "none";
-    celebrationCard.style.display = "block";
-    launchChaos();
-});
+        yesBtn.addEventListener("click", () =>
+        {
+            mainCard.style.display = "none";
+            celebrationCard.style.display = "block";
+            launchChaos();
+        });
 
-function launchChaos() {
-    for (let i = 0; i < 40; i++) {
-        const el = document.createElement("div");
-        el.className = "float";
-        el.innerHTML = ["💖","🎆","🎉","✨","🔥"][Math.floor(Math.random()*5)];
-        el.style.left = Math.random() * window.innerWidth + "px";
-        el.style.top = window.innerHeight + "px";
-        el.style.fontSize = 20 + Math.random()*30 + "px";
-        document.body.appendChild(el);
+        function launchChaos()
+        {
+            for (let i = 0; i < 50; i++)
+            {
+                const item = document.createElement("div");
+                item.className = "float";
+                item.innerHTML = ["💖", "🎆", "✨", "🎉", "🔥"][Math.floor(Math.random() * 5)];
+                item.style.left = Math.random() * window.innerWidth + "px";
+                item.style.top = window.innerHeight + "px";
+                item.style.fontSize = 20 + Math.random() * 30 + "px";
+                document.body.appendChild(item);
 
-        setTimeout(() => el.remove(), 3000);
-    }
-}
-</script>
+                setTimeout(() => item.remove(), 3000);
+            }
+        }
+    </script>
 
 </body>
+
 </html>
